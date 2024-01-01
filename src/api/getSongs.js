@@ -3,6 +3,7 @@ import SpotifyWebApi from "spotify-web-api-js";
 
 const spotify = new SpotifyWebApi();
 
+//To get id of particualr artis :
 export const getIdOfArtist = async (name) => {
     try {
         const result = await spotify.searchArtists(name);
@@ -13,6 +14,7 @@ export const getIdOfArtist = async (name) => {
     }
 }
 
+//to get artist by passing id
 export const getArtistbyId = async (id) => {
     try {
         const result = await spotify.getArtist(id);
@@ -23,6 +25,7 @@ export const getArtistbyId = async (id) => {
     }
 }
 
+//to get songs of a particular artist by passing id
 export const getSongsOfArtist = async (id) => {
     try {
         const result = await spotify.getArtistTopTracks(id, 'IN');
@@ -33,6 +36,7 @@ export const getSongsOfArtist = async (id) => {
     }
 }
 
+//to get id of particular heading or playlist
 export const getIdOfSongs = async (heading) => {
     try {
         const result = await spotify.searchPlaylists(heading)
@@ -44,7 +48,7 @@ export const getIdOfSongs = async (heading) => {
 }
 
 
-
+//to get songs of heading
 export const getSongsByHeadingId = async (id) => {
     try {
         const result = await spotify.getPlaylistTracks(id)

@@ -1,0 +1,13 @@
+.row {
+    width: 70%;
+    min-height: 25rem;
+    border: 1px solid black;
+
+}
+
+.row-song-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
