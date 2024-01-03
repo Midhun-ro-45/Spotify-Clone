@@ -1,0 +1,64 @@
+/* .homepage-container {
+    width: 100%;
+    min-height: 100vh;
+    border: 1px solid black;
+    background-color: aqua;
+    display: flex;
+}
+
+.right-bar {
+    width: 70%;
+    min-height: 100%;
+}
+
+.left-bar {
+    width: 30%;
+    height: 100%;
+    background-color: blueviolet;
+} */
+
+
+
+
+
+
+
+
+
+
+
+/* Styles for the main homepage container */
+.homepage-container {
+    display: flex;
+    /* Use flexbox layout */
+    height: 100vh;
+    /* Set the height to full viewport height */
+    overflow: hidden;
+    /* Prevents overflow */
+}
+
+/* Styles for the left bar */
+.left-bar {
+    flex: 0 0 30%;
+    /* Set a fixed width for the left bar */
+    height: 100%;
+    /* Set the height to full height */
+    position: sticky;
+    /* Set the position to sticky */
+    top: 0;
+    /* Align to the top */
+    /* Other styles for the left bar */
+    border: 2px solid black;
+}
+
+/* Styles for the right bar */
+.right-bar {
+    flex: 1;
+    /* Allow the right bar to occupy remaining space */
+    height: 100%;
+    /* Set the height to full height */
+    overflow-y: auto;
+    /* Enable vertical scrolling for the right bar */
+    /* Other styles for the right bar */
+    width: 100%;
+}

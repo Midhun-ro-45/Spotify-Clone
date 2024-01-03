@@ -1,4 +1,4 @@
-import SongCart from "../SongCart"
+import SongCart from "../SongCart/SongCart"
 import "./row.css"
 import { useState } from "react"
 

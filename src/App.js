@@ -6,7 +6,9 @@ import SpotifyWebApi from 'spotify-web-api-js';
 import { getArtistbyId, getIdOfArtist, getIdOfSongs, getSongsByHeadingId, getSongsOfArtist } from './api/getSongs';
 import SongCart from './components/SongCart/SongCart';
 // import SongCart from './components/SongCart/SongCart';
-import Row from './components/SongCart/row/Row';
+import Row from './components/row/Row';
+import ContentBox from './components/content box/ContentBox';
+import HomePage from './components/homepage/HomePage';
 
 function App() {
 
@@ -52,9 +54,8 @@ function App() {
 
   return (
     <div className="App">
-      <h1>welcome</h1>
       {
-        token ? <div>  <Row title={"tamil trending 2023"} songs={songs} /> </div> : <Login />
+        token ? <HomePage /> : <Login />
       }
 
     </div>

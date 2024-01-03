@@ -5,14 +5,15 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import reducer, { initialState } from "./reducer"
 import { Datalayer } from './Datalayer';
-import Row from './components/SongCart/row/Row';
+import { BrowserRouter, BrowserRouter as Router } from 'react-router-dom';
+import ArtistContent from './components/artistContent box/ArtistContent';
+import AppRouter from './router/AppRouter';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 
   <Datalayer initialState={initialState} reducer={reducer}>
     <App />
-    <Row />
   </Datalayer>
 
 );
