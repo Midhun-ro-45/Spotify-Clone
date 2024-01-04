@@ -11,6 +11,7 @@ function ContentBox({ description, maincontent }) {
                 if (songId) {
                     getSongsByHeadingId(songId).then(songs => {
                         setContentBoxdetails(songs);
+                        // console.log(songs)
                     });
                 }
             });
@@ -21,10 +22,12 @@ function ContentBox({ description, maincontent }) {
     let imageUrl = "";
     if (contentBoxdetails && contentBoxdetails.items && contentBoxdetails.items.length > 0) {
         const { items } = contentBoxdetails;
-        if (items[0]?.track?.album?.images && items[0].track.album.images.length > 0) {
-            imageUrl = items[0].track.album.images[0].url;
+        if (items[1]?.track?.album?.images && items[1].track.album.images.length > 0) {
+            imageUrl = items[1].track.album.images[1].url;
         }
     }
+
+    // let imageUrl = contentBoxdetails.items[0].track.album.images[0].url
 
     return (
         <div className='content-box'>

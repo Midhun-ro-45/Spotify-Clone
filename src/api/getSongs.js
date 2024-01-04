@@ -48,7 +48,7 @@ export const getIdOfSongs = async (heading) => {
 }
 
 
-//to get songs of heading
+// to get songs of heading
 export const getSongsByHeadingId = async (id) => {
     try {
         const result = await spotify.getPlaylistTracks(id)
@@ -57,3 +57,20 @@ export const getSongsByHeadingId = async (id) => {
         console.error('error fetching songs', error)
     }
 }
+// const MAX_RETRIES = 5;
+// const RETRY_DELAY = 1000; // 1 second
+
+// export const getSongsByHeadingId = async (id, retries = 0) => {
+//     try {
+//         const result = await spotify.getPlaylistTracks(id);
+//         return result;
+//     } catch (error) {
+//         if (error.response && error.response.status === 429 && retries < MAX_RETRIES) {
+//             console.warn('Rate limit exceeded. Retrying...');
+//             await new Promise(resolve => setTimeout(resolve, RETRY_DELAY * Math.pow(2, retries)));
+//             return getSongsByHeadingId(id, retries + 1);
+//         }
+//         console.error('Error fetching songs:', error);
+//         throw error; // propagate the error
+//     }
+// };

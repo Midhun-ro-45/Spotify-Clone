@@ -13,8 +13,6 @@ import HomePage from './components/homepage/HomePage';
 function App() {
 
   const [token, setToken] = useState(null);
-  const [songs, setSongs] = useState(null)
-
 
 
   useEffect(() => {
@@ -35,19 +33,11 @@ function App() {
         }
       })
 
-      getIdOfSongs('bollywood hot hits').then(songId => {
+      getIdOfSongs('tamil kuthu songs 2023').then(songId => {
         if (songId) {
           getSongsByHeadingId(songId).then(songs => console.log(songs))
         }
       })
-
-      getIdOfSongs('tamil 2023 trending').then(songId => {
-        if (songId) {
-          getSongsByHeadingId(songId).then(songs => setSongs(songs.items))
-        }
-      })
-
-      // console.log({ token });
 
     }
   }, [])

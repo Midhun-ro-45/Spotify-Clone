@@ -3,6 +3,8 @@
     height: 5rem;
     background-color: sandybrown;
     position: sticky;
-    top: 0px;
+    top: 0.5rem;
     z-index: 1000;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
 }

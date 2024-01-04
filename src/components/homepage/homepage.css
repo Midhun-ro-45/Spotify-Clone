@@ -35,6 +35,7 @@
     /* Set the height to full viewport height */
     overflow: hidden;
     /* Prevents overflow */
+    background-color: black;
 }
 
 /* Styles for the left bar */
@@ -48,7 +49,6 @@
     top: 0;
     /* Align to the top */
     /* Other styles for the left bar */
-    border: 2px solid black;
 }
 
 /* Styles for the right bar */

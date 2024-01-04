@@ -8,12 +8,14 @@ import { Datalayer } from './Datalayer';
 import { BrowserRouter, BrowserRouter as Router } from 'react-router-dom';
 import ArtistContent from './components/artistContent box/ArtistContent';
 import AppRouter from './router/AppRouter';
+import HomeContainer from './components/homecontainer/HomeContainer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 
   <Datalayer initialState={initialState} reducer={reducer}>
     <App />
+    <HomeContainer />
   </Datalayer>
 
 );
