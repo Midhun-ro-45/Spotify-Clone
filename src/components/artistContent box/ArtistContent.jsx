@@ -1,16 +1,22 @@
 import { useState, useEffect } from "react";
 import "./artistcontent.css";
 import { getArtistbyId, getIdOfArtist } from "../../api/getSongs";
+import { useNavigate } from "react-router-dom";
+import ArtistSongList from "../artistSongList/ArtistSongList";
 
 
 
 function ArtistContent({ artistcontent }) {
     const [artistDetails, setArtistDetails] = useState(null);
+    const [artistID, setArtistID] = useState(null);
+
+    const navigate = useNavigate()
 
 
     useEffect(() => {
         if (artistcontent) {
             getIdOfArtist(artistcontent).then((id) => {
+                setArtistID(id)
                 if (id) {
                     getArtistbyId(id).then((artistDetails) => {
                         // Set the artist details to the state
@@ -27,10 +33,12 @@ function ArtistContent({ artistcontent }) {
         imageUrl = artistDetails.images[0].url;
     }
 
-
+    const handleClick = () => {
+        navigate("/artistSongs");
+    }
 
     return (
-        <div className='content-box'>
+        <div className='content-box' onClick={handleClick}>
             <div className='image'>
                 {/* Conditional rendering of the image */}
                 {imageUrl ? (

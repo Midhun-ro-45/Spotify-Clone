@@ -1,17 +1,20 @@
 import React from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Row from '../components/row/Row'
 import SongCollection from '../components/songCollection/SongCollection'
+import ArtistSongList from '../components/artistSongList/ArtistSongList'
+import Search from '../components/search/Search'
 
 function AppRouter() {
     return (
-        <BrowserRouter>
+        <Router>
             <Routes>
                 <Route path='/all' element={<Row />} />
                 <Route path='/songscollection' element={<SongCollection />} />
+                <Route path='/artistSongs' element={<ArtistSongList />} />
+                <Route path='/search' element={<Search />} />
             </Routes>
-
-        </BrowserRouter>
+        </Router>
     )
 }
 

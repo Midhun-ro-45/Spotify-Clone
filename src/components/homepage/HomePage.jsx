@@ -25,8 +25,12 @@ function HomePage() {
             </div>
             <div className="right-bar">
                 <Navbar />
-                <RightBarContent />
-                <Row title={'2023 tamil trending'} songs={songs} />
+
+                <div className="rightBarArea">
+                    <RightBarContent />
+                    <Row title={'2023 tamil trending'} songs={songs} />
+                </div>
+
             </div>
         </div>
     )

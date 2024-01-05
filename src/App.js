@@ -24,20 +24,20 @@ function App() {
       setToken(_token)
       spotify.setAccessToken(_token);
 
-      spotify.getMe().then(user => console.log({ user }))
+      // spotify.getMe().then(user => console.log({ user }))
 
-      getIdOfArtist('Yuvan Shankar Raja').then(ArtistId => {
-        if (ArtistId) {
-          getArtistbyId(ArtistId).then(artist => console.log(artist))
-          getSongsOfArtist(ArtistId).then(songs => console.log(songs))
-        }
-      })
+      // getIdOfArtist('Yuvan Shankar Raja').then(ArtistId => {
+      //   if (ArtistId) {
+      //     getArtistbyId(ArtistId).then(artist => console.log(artist))
+      //     getSongsOfArtist(ArtistId).then(songs => console.log(songs))
+      //   }
+      // })
 
-      getIdOfSongs('tamil kuthu songs 2023').then(songId => {
-        if (songId) {
-          getSongsByHeadingId(songId).then(songs => console.log(songs))
-        }
-      })
+      // getIdOfSongs('tamil kuthu songs 2023').then(songId => {
+      //   if (songId) {
+      //     getSongsByHeadingId(songId).then(songs => console.log(songs))
+      //   }
+      // })
 
     }
   }, [])
