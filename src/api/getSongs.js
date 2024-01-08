@@ -3,6 +3,7 @@ import SpotifyWebApi from "spotify-web-api-js";
 
 const spotify = new SpotifyWebApi();
 
+
 //To get id of particualr artis :
 export const getIdOfArtist = async (name) => {
     try {

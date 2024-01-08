@@ -7,6 +7,7 @@
     overflow: hidden;
     /* Prevents overflow */
     background-color: black;
+    position: relative;
 }
 
 /* Styles for the left bar */
@@ -41,4 +42,5 @@
 .rightBarArea {
     width: 100%;
     min-height: 100vh;
+    /* position: relative; */
 }

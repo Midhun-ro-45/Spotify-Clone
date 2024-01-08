@@ -1,0 +1,9 @@
+.musicplayer {
+    width: 100vw;
+    height: 4rem;
+    background-color: rgb(223, 226, 226);
+    position: absolute;
+    bottom: 0px;
+    right: 1rem;
+    overflow: hidden;
+}

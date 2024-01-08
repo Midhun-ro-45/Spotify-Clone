@@ -7,7 +7,7 @@
 }
 
 .row-heading-container {
-    width: 97%;
+    width: 96%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -28,4 +28,18 @@ h1 {
     /* gap: 2rem; */
     padding: 0.8rem 0.3rem;
 
+}
+
+button {
+    background-color: rgb(66, 64, 64);
+    outline: none;
+    color: white;
+    border-radius: 0.3rem;
+    margin-top: 0.3rem;
+    border: none;
+    padding: 0.4rem;
+}
+
+button:hover {
+    background-color: rgb(85, 82, 82);
 }

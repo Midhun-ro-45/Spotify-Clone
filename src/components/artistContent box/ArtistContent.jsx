@@ -33,12 +33,20 @@ function ArtistContent({ artistcontent }) {
         imageUrl = artistDetails.images[0].url;
     }
 
-    const handleClick = () => {
-        navigate("/artistSongs");
-    }
+    // const handleClick = () => {
+    //     { artistID && <ArtistSongList id={artistID} /> }
+    //     navigate("/artistSongs");
+
+    // }
+    // const handleClick = () => {
+    //     if (artistID) {
+    //         navigate("/artistSongs", { state: { id: artistID } });
+    //     }
+    // };
+
 
     return (
-        <div className='content-box' onClick={handleClick}>
+        <div className='content-box' >
             <div className='image'>
                 {/* Conditional rendering of the image */}
                 {imageUrl ? (

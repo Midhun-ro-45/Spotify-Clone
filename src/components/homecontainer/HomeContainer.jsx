@@ -14,10 +14,12 @@ function HomeContainer() {
             </div>
 
             <div className="searchIcon">
-                {/* <Link to={"/search"}> */}
-                <FontAwesomeIcon icon={faMagnifyingGlass} />
-                <h3>Search</h3>
-                {/* </Link> */}
+
+                <Link to={"/search"}>
+                    <FontAwesomeIcon icon={faMagnifyingGlass} />
+                    <h3>Search</h3>
+                </Link>
+
             </div>
 
         </div>

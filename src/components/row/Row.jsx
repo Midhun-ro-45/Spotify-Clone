@@ -18,7 +18,7 @@ function Row({ title, songs }) {
 
             <div className="row-heading-container">
                 <h1>{title}</h1>
-                <button onClick={() => (endIndex === 4) ? (setEndIndex(20), setShowAll("minimize")) : (setEndIndex(4), setShowAll("show all"))}>{showAll}</button>
+                <button onClick={() => (endIndex === 4) ? (setEndIndex(20), setShowAll("Minimize")) : (setEndIndex(4), setShowAll("Show all"))}>{showAll}</button>
 
             </div>
 

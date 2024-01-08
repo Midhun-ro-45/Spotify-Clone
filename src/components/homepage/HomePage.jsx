@@ -7,6 +7,7 @@ import Navbar from "../navbar/Navbar"
 import ContentBox from "../content box/ContentBox"
 import HomeContainer from "../homecontainer/HomeContainer"
 import SongHeadingContainer from "../songHeadingContainer/SongHeadingContainer"
+import MusicPlayer from "../musicplayer/MusicPlayer"
 
 function HomePage() {
     const [songs, setSongs] = useState(null)
@@ -29,6 +30,7 @@ function HomePage() {
                 <div className="rightBarArea">
                     <RightBarContent />
                     <Row title={'2023 tamil trending'} songs={songs} />
+                    <MusicPlayer />
                 </div>
 
             </div>

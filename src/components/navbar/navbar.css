@@ -1,8 +1,8 @@
 .navbar {
     width: 100%;
     height: 5rem;
-    /* background-color: sandybrown; */
-    border: 1px solid white;
+    background-color: rgb(35, 35, 88);
+    /* border: 1px solid white; */
     position: sticky;
     top: 0px;
     z-index: 1000;
