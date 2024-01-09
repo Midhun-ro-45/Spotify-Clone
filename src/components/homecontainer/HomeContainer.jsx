@@ -8,8 +8,11 @@ function HomeContainer() {
         <div className="homecontainer">
 
             <div className="homeIcon">
-                <FontAwesomeIcon icon={faHouse} />
-                <h3>Home</h3>
+
+                <Link to={"/"} >
+                    <FontAwesomeIcon icon={faHouse} />
+                    <h3>Home</h3>
+                </Link>
 
             </div>
 

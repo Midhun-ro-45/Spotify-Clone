@@ -5,23 +5,22 @@ import ArtistSongList from "../components/artistSongList/ArtistSongList";
 import Search from "../components/search/Search";
 import AuthWrapper from "../components/wrappers/AuthWrapper";
 import ParentPage from "../pages/ParentPage";
+import ArtistContent from "../components/artistContent box/ArtistContent";
+import Row from "../components/row/Row";
+import RightBarContent from "../components/rightBarContent/RightBarContent";
+import Login from "../auth/Login";
 
 function AppRouter() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route
-          path="/"
-          element={
-            <AuthWrapper>
-              <ParentPage />
-            </AuthWrapper>
-          }
-        >
-          <Route index element={<h1>element</h1>} />
+        <Route path="/" element={<Login />} >
+
+          <Route index element={<><RightBarContent /><Row /></>} />
           <Route path="search" element={<Search />} />
           <Route path="songscollection" element={<SongCollection />} />
-          <Route path="artistSongs" element={<ArtistSongList />} />
+          <Route path="artistsongs" element={<ArtistSongList />} />
+          <Route path="/parentpage" element={<ParentPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

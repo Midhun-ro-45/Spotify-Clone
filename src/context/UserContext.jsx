@@ -22,4 +22,9 @@ const UserContextProvider = ({ children }) => {
 };
 export default UserContextProvider;
 
-export const useUserContext = () => !!useContext(userContext);
+// export const useUserContext = () => !!useContext(userContext);
+export const useUserContext = () => {
+  const context = useContext(userContext);
+  return context ? context.token : null;
+};
+

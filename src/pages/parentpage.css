@@ -1,0 +1,46 @@
+/* Styles for the main homepage container */
+.parentpage-container {
+    display: flex;
+    /* Use flexbox layout */
+    height: 100vh;
+    /* Set the height to full viewport height */
+    overflow: hidden;
+    /* Prevents overflow */
+    background-color: black;
+    position: relative;
+}
+
+/* Styles for the left bar */
+.left-bar {
+    flex: 0 0 25%;
+    /* Set a fixed width for the left bar */
+    height: 100%;
+    /* Set the height to full height */
+    position: sticky;
+    /* Set the position to sticky */
+    top: 0;
+    /* Align to the top */
+    /* Other styles for the left bar */
+}
+
+/* Styles for the right bar */
+.right-bar {
+    flex: 1;
+    /* Allow the right bar to occupy remaining space */
+    height: 100%;
+    /* Set the height to full height */
+    overflow-y: auto;
+    /* Enable vertical scrolling for the right bar */
+    /* Other styles for the right bar */
+    width: 100%;
+    background-color: rgb(24, 23, 23);
+    margin-top: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+
+.rightBarArea {
+    width: 100%;
+    min-height: 100vh;
+    /* position: relative; */
+}
