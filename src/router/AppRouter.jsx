@@ -14,14 +14,19 @@ function AppRouter() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Login />} >
-
-          <Route index element={<><RightBarContent /><Row /></>} />
+        <Route
+          path="/"
+          element={
+            <AuthWrapper>
+              <ParentPage />
+            </AuthWrapper>
+          }
+        >
           <Route path="search" element={<Search />} />
           <Route path="songscollection" element={<SongCollection />} />
           <Route path="artistsongs" element={<ArtistSongList />} />
-          <Route path="/parentpage" element={<ParentPage />} />
         </Route>
+        <Route path="/login" element={<Login />} />
       </Routes>
     </BrowserRouter>
   );
