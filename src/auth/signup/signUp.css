@@ -27,6 +27,7 @@
 .signup-container input {
     background-color: #121212;
     color: white;
+    margin-left: -10px;
 }
 
 .signup-container input::placeholder {

@@ -1,8 +1,8 @@
 import { useState } from "react";
-import Button from "../components/Button/Button";
-import Input from "../components/Input/Input";
+import Button from "../../components/button/Button";
+import Input from "../../components/input/Input";
 import { Link } from "react-router-dom";
-import SpotifyIcon from "../components/SpotifyIcon/SpotifyIcon";
+// import SpotifyIcon from "../components/SpotifyIcon/SpotifyIcon";
 import "./signUp.css";
 
 function SignUp() {
@@ -13,7 +13,7 @@ function SignUp() {
 
   return (
     <div className="total-signup-container">
-      <SpotifyIcon />
+      {/* <SpotifyIcon /> */}
       <div className="signup-container">
         <h1>Sign up to start listening</h1>
         <Input
@@ -49,7 +49,7 @@ function SignUp() {
         />
         <div className="sep-signup-two"></div>
         <div className="login-link">
-          Already have an account?<Link to={"/login"}>Log in here.</Link>
+          Already have an account?<Link to={"/loginform"}>Log in here.</Link>
         </div>
       </div>
     </div>

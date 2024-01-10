@@ -1,14 +1,14 @@
 import { Outlet } from "react-router-dom";
-import HomeContainer from "../components/homecontainer/HomeContainer";
-import Navbar from "../components/navbar/Navbar";
-import MusicPlayer from "../components/musicplayer/MusicPlayer";
-import SongHeadingContainer from "../components/songHeadingContainer/SongHeadingContainer";
-import HomePage from "../components/homepage/HomePage";
+import HomeContainer from "../../components/homecontainer/HomeContainer";
+import Navbar from "../../components/navbar/Navbar";
+import MusicPlayer from "../../components/musicplayer/MusicPlayer";
+import SongHeadingContainer from "../../components/songHeadingContainer/SongHeadingContainer";
+import HomePage from "../../components/homepage/HomePage";
 import "./parentpage.css";
-import RightBarContent from "../components/rightBarContent/RightBarContent";
-import Row from "../components/row/Row";
+import RightBarContent from "../../components/rightBarContent/RightBarContent";
+import Row from "../../components/row/Row";
 import { useState } from "react";
-import { getIdOfSongs, getSongsByHeadingId } from "../api/getSongs";
+import { getIdOfSongs, getSongsByHeadingId } from "../../api/getSongs";
 
 const ParentPage = () => {
   const [songs, setSongs] = useState(null);
@@ -27,9 +27,13 @@ const ParentPage = () => {
       <div className="right-bar">
         <Navbar />
         <div className="rightBarArea">
+          <RightBarContent />
+          <Row />
           <Outlet />
+          <MusicPlayer />
         </div>
       </div>
+
     </div>
   );
 };

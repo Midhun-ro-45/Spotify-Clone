@@ -2,7 +2,7 @@
     width: 100%;
     min-height: 100vh;
     background-color: rgb(24, 23, 23);
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     padding-top: 2rem;
 }
 
@@ -40,6 +40,6 @@ input::placeholder {
     height: 100%;
     border: 1px solid white;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     margin: auto;
 }

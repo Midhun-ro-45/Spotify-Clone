@@ -36,7 +36,8 @@ function ContentBox({ description, maincontent }) {
                 {imageUrl ? (
                     <img src={imageUrl} alt="Content" />
                 ) : (
-                    <img src="default-image-url-here" alt="Default Image" />
+                    // <img src="default-image-url-here" alt="Default Image" />
+                    <></>
                 )}
             </div>
             <div className='content'>

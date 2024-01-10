@@ -7,7 +7,7 @@ function HomeContainer() {
   return (
     <div className="homecontainer">
       <div className="homeIcon">
-        <Link to={"/"}>
+        <Link to={"/parentpage"}>
           <FontAwesomeIcon icon={faHouse} />
           <h3>Home</h3>
         </Link>
