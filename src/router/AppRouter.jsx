@@ -11,6 +11,7 @@ import RightBarContent from "../components/rightBarContent/RightBarContent";
 import Login from "../auth/login/Login";
 import LandingPage from "../pages/landingpage/Landingpage";
 import SignUp from "../auth/signup/SignUp";
+import RightBarArea from "../components/rightBarArea/RightBarArea";
 
 function AppRouter() {
   return (
@@ -21,6 +22,7 @@ function AppRouter() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/parentpage" element={<ParentPage />} >
 
+          <Route index element={<RightBarArea />} />
           <Route path="search" element={<Search />} />
           <Route path="songscollection" element={<SongCollection />} />
           <Route path="artistsongs" element={<ArtistSongList />} />

@@ -7,6 +7,9 @@ import HomePage from "../../components/homepage/HomePage";
 import "./parentpage.css";
 import RightBarContent from "../../components/rightBarContent/RightBarContent";
 import Row from "../../components/row/Row";
+import Search from "../../components/search/Search";
+import { Route } from "react-router-dom";
+
 import { useState } from "react";
 import { getIdOfSongs, getSongsByHeadingId } from "../../api/getSongs";
 
@@ -27,12 +30,12 @@ const ParentPage = () => {
       <div className="right-bar">
         <Navbar />
         <div className="rightBarArea">
-          <RightBarContent />
-          <Row />
+          {/* <RightBarContent />
+          <Row /> */}
           <Outlet />
-          <MusicPlayer />
         </div>
       </div>
+      <MusicPlayer />
 
     </div>
   );

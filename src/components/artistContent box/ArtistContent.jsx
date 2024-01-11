@@ -52,7 +52,7 @@ function ArtistContent({ artistcontent }) {
                 {imageUrl ? (
                     <img src={imageUrl} alt="Artist" />
                 ) : (
-                    <img src="default-image-url-here" alt="Default Artist Image" />
+                    <img />
                 )}
             </div>
             <div className='content'>

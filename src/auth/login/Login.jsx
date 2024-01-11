@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import Button from "../../components/button/Button";
 import Input from "../../components/input/Input";
-// import SpotifyIcon from "../components/SpotifyIcon/SpotifyIcon";
+import SpotifyIcon from "../../components/spotify icon/SpotifyIcon";
 import { Link, useNavigate } from "react-router-dom";
 import "./login.css";
 import UserContextProvider from "../../context/UserContext";
@@ -49,15 +49,15 @@ function Login() {
   }
   return (
     <div className="main-container-login">
-      {/* <SpotifyIcon /> */}
+      <SpotifyIcon />
 
       <div className="sup-container-login">
         <div className="sub-container">
           <h1 className="heading-one">Login to spotify</h1>
           <div className="butt-group">
-            <Link>
-              <Button content={"continue with Google"} />
-            </Link>
+
+            <Button onClick={navigateToSpotifyAuthorization} content={"continue with Google"} />
+
             {/* <Button content={"continue with Facebook"} />
             <Button content={"continue with Apple"} />
             <Button content={"continue with phonenumber"} /> */}

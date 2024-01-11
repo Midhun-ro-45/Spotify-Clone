@@ -27,6 +27,7 @@
 .rightBarArea {
     width: 100%;
     min-height: 100vh;
+
 }
 
 .login {
@@ -35,17 +36,22 @@
     background-color: rgba(0, 0, 0, 0.6);
     position: absolute;
     z-index: 2000;
-    display: grid;
-    align-items: center;
-    justify-items: center;
+    display: flex;
+    justify-content: flex-end;
+
 }
 
 .login a {
-    padding: 0.5rem 2rem;
     border-radius: 0.5rem;
     background-color: rgb(5, 53, 5);
     color: white;
     text-decoration: none;
+    height: 3rem;
+    width: 7rem;
+    margin: 5%;
+    display: grid;
+    justify-items: center;
+    align-content: center;
 }
 
 .login a:hover {

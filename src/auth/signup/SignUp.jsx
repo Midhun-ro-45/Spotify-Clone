@@ -1,27 +1,57 @@
-import { useState } from "react";
+import "./signUp.css";
+import { useContext, useState } from "react";
 import Button from "../../components/button/Button";
 import Input from "../../components/input/Input";
 import { Link } from "react-router-dom";
-// import SpotifyIcon from "../components/SpotifyIcon/SpotifyIcon";
-import "./signUp.css";
+import SpotifyIcon from "../../components/spotify icon/SpotifyIcon";
+import { useUserContext } from "../../context/UserContext";
 
 function SignUp() {
-  const [email, setEmail] = useState("");
-  const handleChange = (event) => {
-    setEmail(event.target.value);
+  // const [email, setEmail] = useState("");
+  // const handleChange = (event) => {
+  //   setEmail(event.target.value);
+  // };
+
+  const initialState = {
+    username: '',
+    password: '',
+  }
+
+  const [inputValue, setInputValue] = useState(initialState)
+
+  const { signupAuth } = useUserContext()
+
+  const handleUsername = (event) => {
+    setInputValue({ ...inputValue, username: event.target.value });
+    console.log(inputValue);
   };
+  const handlePassword = (event) => {
+    setInputValue({ ...inputValue, password: event.target.value });
+    console.log(inputValue);
+  };
+
+  const handleSignup = () => {
+    signupAuth(inputValue)
+  }
 
   return (
     <div className="total-signup-container">
-      {/* <SpotifyIcon /> */}
+      <SpotifyIcon />
       <div className="signup-container">
         <h1>Sign up to start listening</h1>
         <Input
-          type={"email"}
-          value={email}
-          onChange={handleChange}
+          type={"text"}
+          value={inputValue.username}
+          onChange={handleUsername}
           label={"Email address"}
-          placeholder={"name@domain.com"}
+          placeholder={"user name"}
+        />
+        <Input
+          type={"password"}
+          value={inputValue.password}
+          onChange={handlePassword}
+          label={"Password"}
+          placeholder={"password"}
         />
         <Link>Use phone number instead.</Link>
         <Link>
@@ -30,6 +60,7 @@ function SignUp() {
             backgroundColor="#1fdf64"
             color={"white"}
             fontSize={"18px"}
+            onClick={handleSignup}
           />
         </Link>
         <div className="sep-signup-one">
@@ -41,12 +72,12 @@ function SignUp() {
           backgroundColor={"black"}
           fontSize={"15px"}
         />
-        <Button
+        {/* <Button
           content={"continue with Facebook"}
           color={"white"}
           backgroundColor={"black"}
           fontSize={"15px"}
-        />
+        /> */}
         <div className="sep-signup-two"></div>
         <div className="login-link">
           Already have an account?<Link to={"/loginform"}>Log in here.</Link>

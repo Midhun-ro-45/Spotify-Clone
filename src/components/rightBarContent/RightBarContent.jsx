@@ -3,7 +3,14 @@ import ArtistContent from "../artistContent box/ArtistContent";
 import "./rightBarContent.css";
 
 function RightBarContent() {
-  return <div className="rightBarContent-container"></div>;
+  return <div className="rightBarContent-container">
+    <ArtistContent />
+    <ArtistContent />
+    <ArtistContent />
+    <ArtistContent />
+    <ArtistContent />
+    <ArtistContent />
+  </div>;
 }
 
 export default RightBarContent;

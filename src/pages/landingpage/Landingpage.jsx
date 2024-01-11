@@ -7,10 +7,20 @@ import HomeContainer from "../../components/homecontainer/HomeContainer";
 import SongHeadingContainer from "../../components/songHeadingContainer/SongHeadingContainer";
 import MusicPlayer from "../../components/musicplayer/MusicPlayer";
 import { Link } from "react-router-dom";
-
+import { useState } from "react";
+import { getSongsByHeadingId, getIdOfSongs } from "../../api/getSongs";
 
 
 function LandingPage() {
+
+    const [songs, setSongs] = useState(null);
+
+    getIdOfSongs("tamil trending").then((songId) => {
+        if (songId) {
+            getSongsByHeadingId(songId).then((songs) => setSongs(songs?.items));
+        }
+    });
+
     return (
         <div className="landingpage-container">
 
@@ -26,7 +36,7 @@ function LandingPage() {
                 <Navbar />
                 <div className="rightBarArea">
                     <RightBarContent />
-                    <Row title={"2023 tamil trending"} />
+                    <Row title={"2023 tamil trending"} songs={songs} />
                     <MusicPlayer />
                 </div>
             </div>

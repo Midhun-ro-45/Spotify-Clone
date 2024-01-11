@@ -3,7 +3,6 @@ import reportWebVitals from "./reportWebVitals";
 import AppRouter from "./router/AppRouter";
 import "./index.css";
 import UserContextProvider from "./context/UserContext";
-import AuthContext from "./context/AuthContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
