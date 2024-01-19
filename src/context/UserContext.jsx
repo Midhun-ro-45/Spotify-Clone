@@ -33,16 +33,18 @@ const UserContextProvider = ({ children }) => {
   }
 
   useEffect(() => {
-    const spotify = new SpotifyWebApi();
+    const spotify = new SpotifyWebApi({ redirectUri: "http//localhost:3000/parentpage", clientId: process.env.clientId, clientSecret: process.env.clientSecret });
     const hash = getAccessToken();
-    window.location.hash = "";
+    // window.location.hash = "";
     const _token = hash.access_token;
     if (_token) {
+      // Store the access token securely in localStorage
+      localStorage.setItem("access_token", _token);
       setToken(_token);
       spotify.setAccessToken(_token);
     }
 
-
+    // console.log(token);
 
   }, []);
 

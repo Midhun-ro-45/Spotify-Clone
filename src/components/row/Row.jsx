@@ -1,8 +1,9 @@
 import SongCart from "../SongCart/SongCart"
 import "./row.css"
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { getIdOfSongs, getSongsByHeadingId } from "../../api/getSongs"
 
-function Row({ title, songs }) {
+function Row({ title }) {
 
     const [currentlyPlaying, setCurrentlyPlaying] = useState(null)
 
@@ -12,6 +13,20 @@ function Row({ title, songs }) {
 
     const [endIndex, setEndIndex] = useState(4)
     const [showAll, setShowAll] = useState("show all")
+
+    const [songs, setSongs] = useState(null);
+    // const { token } = useUserContext();
+
+    useEffect(() => {
+
+        getIdOfSongs("tamil trending").then((songId) => {
+            if (songId) {
+                getSongsByHeadingId(songId).then((songs) => setSongs(songs?.items));
+            }
+        });
+    }, [])
+
+
 
     return (
         <div className='row'>

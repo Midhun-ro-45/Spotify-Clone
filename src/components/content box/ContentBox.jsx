@@ -11,7 +11,7 @@ function ContentBox({ description, maincontent }) {
                 if (songId) {
                     getSongsByHeadingId(songId).then(songs => {
                         setContentBoxdetails(songs);
-                        // console.log(songs)
+                        console.log(songs)
                     });
                 }
             });

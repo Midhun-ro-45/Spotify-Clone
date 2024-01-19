@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import "./artistcontent.css";
-import { getArtistbyId, getIdOfArtist } from "../../api/getSongs";
+import { getArtistbyId, getArtistIdByName } from "../../api/getSongs";
 import { useNavigate } from "react-router-dom";
 import ArtistSongList from "../artistSongList/ArtistSongList";
 
 
 
 function ArtistContent({ artistcontent }) {
-    const [artistDetails, setArtistDetails] = useState(null);
+    const [artistSongs, setArtistSongs] = useState(null);
     const [artistID, setArtistID] = useState(null);
 
     const navigate = useNavigate()
@@ -15,12 +15,13 @@ function ArtistContent({ artistcontent }) {
 
     useEffect(() => {
         if (artistcontent) {
-            getIdOfArtist(artistcontent).then((id) => {
+            getArtistIdByName(artistcontent).then((id) => {
                 setArtistID(id)
                 if (id) {
-                    getArtistbyId(id).then((artistDetails) => {
+                    getArtistbyId(id).then((value) => {
                         // Set the artist details to the state
-                        setArtistDetails(artistDetails);
+                        setArtistSongs(value);
+                        console.log(value);
                     })
                 }
             })
@@ -29,8 +30,8 @@ function ArtistContent({ artistcontent }) {
 
     // Conditional rendering of the image
     let imageUrl = "";
-    if (artistDetails && artistDetails.images && artistDetails.images.length > 0) {
-        imageUrl = artistDetails.images[0].url;
+    if (artistSongs && artistSongs.images && artistSongs.images.length > 0) {
+        imageUrl = artistSongs.images[0].url;
     }
 
     // const handleClick = () => {
