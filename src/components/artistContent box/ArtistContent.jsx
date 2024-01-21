@@ -10,7 +10,7 @@ function ArtistContent({ artistcontent }) {
     const [artistSongs, setArtistSongs] = useState(null);
     const [artistID, setArtistID] = useState(null);
 
-    const navigate = useNavigate()
+    const navigator = useNavigate()
 
 
     useEffect(() => {
@@ -34,20 +34,14 @@ function ArtistContent({ artistcontent }) {
         imageUrl = artistSongs.images[0].url;
     }
 
-    // const handleClick = () => {
-    //     { artistID && <ArtistSongList id={artistID} /> }
-    //     navigate("/artistSongs");
+    const handleClick = () => {
+        navigator("artistsongs", { state: { artistID: artistID } });
+    };
 
-    // }
-    // const handleClick = () => {
-    //     if (artistID) {
-    //         navigate("/artistSongs", { state: { id: artistID } });
-    //     }
-    // };
 
 
     return (
-        <div className='content-box' >
+        <div className='content-box' onClick={handleClick}>
             <div className='image'>
                 {/* Conditional rendering of the image */}
                 {imageUrl ? (

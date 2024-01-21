@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import "./search.css"
 import { getIdOfSongs, getSongsByHeadingId } from "../../api/getSongs"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -14,11 +14,18 @@ function Search() {
         // console.log(inputValue);
     }
 
-    getIdOfSongs(inputValue).then(songId => {
-        if (songId) {
-            getSongsByHeadingId(songId).then(songs => setSearchResult(songs.items))
-        }
-    })
+    useEffect(() => {
+
+        getIdOfSongs(inputValue).then(songId => {
+            if (songId) {
+                getSongsByHeadingId(songId).then(songs => {
+                    if (songs.items && songs.items.length > 0) {
+                        setSearchResult(songs.items);
+                    }
+                })
+            }
+        })
+    }, [inputValue])
 
 
     const [currentlyPlaying, setCurrentlyPlaying] = useState(null)
@@ -42,7 +49,8 @@ function Search() {
                         key={index}
                         heading={data.track.name}
                         description={data.track.artists[0].name.length > 35 ? data.track.artists[0].name.substring(0, 35) + "..." : data.track.artists[0].name}
-                        imagesrc={data.track.album.images[0].url}
+                        // imagesrc={data.track.album.images[0].url}
+                        imagesrc={data.track.album.images[0]?.url || <img src="default image" />}  // Add a default image URL or handle accordingly
                         id={data.track.id}
                         isCurrentlyPlaying={currentlyPlaying === data.track.id}
                         onTogglePlay={handleCurrentlyPlaying}

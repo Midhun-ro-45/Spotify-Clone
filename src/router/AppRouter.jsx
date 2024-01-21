@@ -12,6 +12,7 @@ import Login from "../auth/login/Login";
 import LandingPage from "../pages/landingpage/Landingpage";
 import SignUp from "../auth/signup/SignUp";
 import RightBarArea from "../components/rightBarArea/RightBarArea";
+import ContentBoxSongs from "../components/contentBoxSongs/ContentBoxSongs";
 
 function AppRouter() {
   return (
@@ -26,6 +27,7 @@ function AppRouter() {
           <Route path="search" element={<Search />} />
           <Route path="songscollection" element={<SongCollection />} />
           <Route path="artistsongs" element={<ArtistSongList />} />
+          <Route path="contentboxSongs" element={<ContentBoxSongs />} />
 
         </Route>
 

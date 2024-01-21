@@ -19,12 +19,12 @@ function Row({ title }) {
 
     useEffect(() => {
 
-        getIdOfSongs("tamil trending").then((songId) => {
+        getIdOfSongs(title).then((songId) => {
             if (songId) {
                 getSongsByHeadingId(songId).then((songs) => setSongs(songs?.items));
             }
         });
-    }, [])
+    }, [title])
 
 
 

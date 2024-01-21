@@ -7,7 +7,9 @@ function RightBarArea() {
     return (
         <div>
             <RightBarContent />
-            <Row />
+            <Row title={"Tamil Trending"} />
+            <Row title={"2024 Tamil Folk"} />
+            <Row title={"2024 Romantic"} />
         </div>
     )
 }

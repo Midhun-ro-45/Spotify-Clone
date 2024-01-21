@@ -6,7 +6,7 @@ import { useUserContext } from "../context/UserContext";
 const spotify = new SpotifyWebApi();
 
 const headers = {
-    Authorization: `Bearer BQCn8YdnJhSRg_kTbRnAsh5ioQvYqCCn84_XNBVgVdNBGBF8qpQFI32muB7MH-PGgFGPTMq3azEMWSR1TGNUxh4V3RlQejmDhnh09Gv8t1YDsBcCxP8vS30JJRM7h6TOByMq7l7FvS3C2EoVb7iLi9Du7UYfcT6OUoHLCEAOcwFluqRMPhk5ZD4ysgOJQPnNM48p8WgyU5SJvyCg1VwG&token_type=Bearer&expires_in=3600`,
+    Authorization: `Bearer BQBsNKrqPvzeB494F3rxre2RikWowgpLD13zPdZEcFjrxtoFNOpBI-XFfR9FIWe2K_04Q9VsWcHyAd8Dg3mkJUnkz4fGzhed0LQNZLqiViztmwJCqlbZfH5T1zsGho07O-lc3p9PkU0m11p9to083a0yuB7M3UTetNL0MkERwZMEgFRU4i-87M_t6yABHsBRIxLlTXkMCWCJYcxfKrBJ&token_type=Bearer&expires_in=3600`,
     "Content-Type": "application/json",
 };
 
@@ -80,15 +80,19 @@ export const getArtistbyId = async (artistId) => {
 
 
 //to get songs of a particular artist by passing id
-export const getSongsOfArtist = async (id) => {
+export const getSongsOfArtist = async (artistId) => {
     try {
-        const result = await spotify.getArtistTopTracks(id, 'IN');
-        return result
+        const response = await axios.get(`https://api.spotify.com/v1/artists/${artistId}/top-tracks?market=IN`, {
+            headers,
+        })
+        return response.data;
     }
     catch (error) {
         console.error('Error fetching songs', error)
+
     }
 }
+
 
 //to get id of particular heading or playlist
 export const getIdOfSongs = async (playlistName) => {

@@ -38,8 +38,9 @@ input::placeholder {
 .search-result {
     width: 95%;
     height: 100%;
-    border: 1px solid white;
+    /* border: 1px solid white; */
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     margin: auto;
+    justify-items: center;
 }
