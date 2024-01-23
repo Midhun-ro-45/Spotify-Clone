@@ -5,8 +5,9 @@ import { useUserContext } from "../context/UserContext";
 
 const spotify = new SpotifyWebApi();
 
+const token = "BQDf2rf6vfquc3zdzMDYBMd7nZeKCJS0_FOsMPHjd8G0EP9DghTXwQXLkjwBG2lAE3_FE2z8g-mx1DI2sCHqQzz8VPVMbF2gPgjSuzZEDs7sEOgpip89NODD82sG2sPj6FvtvPWYl17aXWJLDS6MM7OWHPHTzneqSLhc2udkSZJ4_86JAy3OyaGGt5W_bPHVZGpdU3FM7PptCvjttJ8pPI7VR5Uyhu62u8bLDU1y5MFBBJ21C5iyMKVko92y4tZso1FKx5N1BWE964U&token_type=Bearer&expires_in=3600"
 const headers = {
-    Authorization: `Bearer BQBsNKrqPvzeB494F3rxre2RikWowgpLD13zPdZEcFjrxtoFNOpBI-XFfR9FIWe2K_04Q9VsWcHyAd8Dg3mkJUnkz4fGzhed0LQNZLqiViztmwJCqlbZfH5T1zsGho07O-lc3p9PkU0m11p9to083a0yuB7M3UTetNL0MkERwZMEgFRU4i-87M_t6yABHsBRIxLlTXkMCWCJYcxfKrBJ&token_type=Bearer&expires_in=3600`,
+    Authorization: `Bearer ${token}`,
     "Content-Type": "application/json",
 };
 
@@ -29,6 +30,36 @@ export const getUserDetails = async () => {
         return null;
     }
 };
+
+getUserDetails().then(value => console.log(value))
+
+
+
+
+// Define the function to get user playlists
+export const getUserPlaylists = async () => {
+    try {
+        // Make a GET request to Spotify API endpoint for user playlists
+        const response = await axios.get("https://api.spotify.com/v1/me/playlists", {
+            headers, // Assuming that 'headers' is defined elsewhere in your code and includes necessary authorization headers
+        });
+
+        // Log or process the playlists
+        console.log("User Playlists:", response.data.items);
+
+        // Return the playlists
+        return response.data.items;
+    } catch (error) {
+        // Handle errors if the request fails
+        console.error('Error fetching user playlists:', error);
+
+        // Return null in case of an error
+        return null;
+    }
+};
+
+// Call the function and log the result
+getUserPlaylists().then(playlists => console.log(playlists));
 
 
 

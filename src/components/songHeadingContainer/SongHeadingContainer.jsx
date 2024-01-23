@@ -1,10 +1,11 @@
 import ContentBox from "../content box/ContentBox"
+import WishBox from "../wishbox/WishBox"
 import "./songheadingcontainer.css"
 
 function SongHeadingContainer() {
     return (
         <div className="songheadingcontainer">
-            <ContentBox maincontent={"2023 Bollywood Hits"} />
+            <WishBox />
             <ContentBox maincontent={"Latest Telugu Hits"} />
             <ContentBox maincontent={"K.G.F - Chapter 1"} />
             <ContentBox maincontent={"RRR(Tamil)"} />

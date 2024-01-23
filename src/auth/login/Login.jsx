@@ -45,7 +45,7 @@ function Login() {
   }
   const navigateToSpotifyAuthorization = () => {
     // Navigate to the Spotify authorization URL using an absolute path.
-    window.location.href = "https://accounts.spotify.com/authorize?client_id=550e4b78040b4cddba2c60580c5f757f&redirect_uri=http://localhost:3000/parentpage&scope=user-read-currently-playing%20user-read-recently-played%20user-read-playback-state%20user-top-read%20user-modify-playback-state&response_type=token&show_dialog=true";
+    window.location.href = "https://accounts.spotify.com/authorize?client_id=550e4b78040b4cddba2c60580c5f757f&redirect_uri=http://localhost:3000/parentpage&scope=playlist-modify-public%20playlist-modify-private%20user-read-currently-playing%20user-read-recently-played%20user-read-playback-state%20user-top-read%20user-modify-playback-state&response_type=token&show_dialog=true";
   }
   return (
     <div className="main-container-login">

@@ -1,69 +1,23 @@
-// import "./musicplayer.css"
-
-// function MusicPlayer() {
-//     return (
-//         <div className="musicplayer">
-
-//         </div>
-//     )
-// }
-
-// export default MusicPlayer
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./musicplayer.css";
-import {
-    faBackwardStep,
-    faBars,
-    faCirclePlay,
-    faForwardStep,
-    faHeart,
-    faMicrophone,
-    faPlay,
-    faRotate,
-    faShuffle,
-    faSquare,
-    faUpRightAndDownLeftFromCenter,
-    faVolumeXmark,
-} from "@fortawesome/free-solid-svg-icons";
-import { faGooglePay } from "@fortawesome/free-brands-svg-icons";
+import SpotifyWebPlayer from "react-spotify-web-playback";
+import { useState } from "react";
 
 function MusicPlayer() {
+
+    const [token, settoken] = useState("BQBcgMDkVfI9hEqVfbG3NZEiDXb2SFcWU8MeF5a-w5FwRvhB8aoa0YxPeQtt3DuXMUgIs2cmjDcFzE0KnjldgiTmc4N3b6QwdyXXLBKHsZPqkfx83-PJWKQpHVBWSPzRN1PmKJX1NtKV7CYcWMB0nfpypwtaSiZGZ3mI-JLGy4Ym8nPqTmgY7dI8Tf-4omJioX0L7PpKJ--Z&token_type=Bearer&expires_in=3600")
+
+
+
+
+    if (!token) return null
     return (
         <div className="musicplayer">
-            <div className="music-player-one">
-                <div className="img-div-one">
-                    <img
-                        // src="https://imgs.search.brave.com/cu9Tj1j9X3ikCtsd7VDLKwbzrduMU4kQnzqpbvLIjtU/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9idXJz/dC5zaG9waWZ5Y2Ru/LmNvbS9waG90b3Mv/YS1kcm9wLW9mLXBp/bmstYW5kLXllbGxv/dy1wYWludC1pbi13/YXRlci5qcGc_d2lk/dGg9MTAwMCZmb3Jt/YXQ9cGpwZyZleGlm/PTAmaXB0Yz0w"
-                        alt=""
-                    />
-                </div>
-                <div className="song-div-one">
-                    <h3>album</h3>
-                    <p>artist name</p>
-                </div>
-                <div className="icon-div-one">
-                    <FontAwesomeIcon icon={faHeart} />
-                </div>
-            </div>
-            <div className="music-player-two">
-                <div className="icon-div-two">
-                    <FontAwesomeIcon icon={faShuffle} />
-                    <FontAwesomeIcon icon={faBackwardStep} />
-                    <FontAwesomeIcon icon={faCirclePlay} />
-                    <FontAwesomeIcon icon={faForwardStep} />
-                    <FontAwesomeIcon icon={faRotate} />
-                </div>
-                <div className="song-length"></div>
-            </div>
-            <div className="music-player-three">
-                <FontAwesomeIcon icon={faSquare} />
-                <FontAwesomeIcon icon={faMicrophone} />
-                <FontAwesomeIcon icon={faBars} />
-                <FontAwesomeIcon icon={faVolumeXmark} />
-                <div className="volume-div"></div>
-                <FontAwesomeIcon icon={faUpRightAndDownLeftFromCenter} />
-            </div>
+
+            <SpotifyWebPlayer token={"BQDf2rf6vfquc3zdzMDYBMd7nZeKCJS0_FOsMPHjd8G0EP9DghTXwQXLkjwBG2lAE3_FE2z8g-mx1DI2sCHqQzz8VPVMbF2gPgjSuzZEDs7sEOgpip89NODD82sG2sPj6FvtvPWYl17aXWJLDS6MM7OWHPHTzneqSLhc2udkSZJ4_86JAy3OyaGGt5W_bPHVZGpdU3FM7PptCvjttJ8pPI7VR5Uyhu62u8bLDU1y5MFBBJ21C5iyMKVko92y4tZso1FKx5N1BWE964U&token_type=Bearer&expires_in=3600"}
+                showSaveIcon
+            // uris={
+            //     "spotify:track:7j7fS14vlwVk0Pfnr0hovC"}
+            />
         </div>
     );
 }
