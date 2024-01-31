@@ -8,10 +8,11 @@ import SongHeadingContainer from "../../components/songHeadingContainer/SongHead
 import MusicPlayer from "../../components/musicplayer/MusicPlayer";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { getSongsByHeadingId, getIdOfSongs } from "../../api/getSongs";
-
+import { useUserContext } from "../../context/UserContext";
 
 function LandingPage() {
+
+    const { getIdOfSongs, getSongsByHeadingId } = useUserContext()
 
     const [songs, setSongs] = useState(null);
 

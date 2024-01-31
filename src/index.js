@@ -3,10 +3,7 @@ import reportWebVitals from "./reportWebVitals";
 import AppRouter from "./router/AppRouter";
 import "./index.css";
 import UserContextProvider from "./context/UserContext";
-<head>
-  <script src="https://sdk.scdn.co/spotify-player.js"></script>
 
-</head>
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

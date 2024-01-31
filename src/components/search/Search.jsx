@@ -1,17 +1,19 @@
-import { useEffect, useState } from "react"
 import "./search.css"
-import { getIdOfSongs, getSongsByHeadingId } from "../../api/getSongs"
+import { useEffect, useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons"
 import SongCart from "../SongCart/SongCart"
+import { useUserContext } from "../../context/UserContext"
 
 function Search() {
+
+    const { getIdOfSongs, getSongsByHeadingId } = useUserContext()
+
     const [inputValue, setInputValue] = useState("")
     const [searchResult, setSearchResult] = useState([])
 
     const handleChange = (event) => {
         setInputValue(event.target.value)
-        // console.log(inputValue);
     }
 
     useEffect(() => {
@@ -28,35 +30,32 @@ function Search() {
     }, [inputValue])
 
 
-    const [currentlyPlaying, setCurrentlyPlaying] = useState(null)
-
-    const handleCurrentlyPlaying = (id) => {
-        setCurrentlyPlaying(currentlyPlaying === id ? null : id)
-    }
-
-
     return (
         <div className="search-container">
 
             <div className="input-container">
-                <input type="text" onChange={handleChange} value={inputValue} placeholder="what do you want to listen?" />
+                <input type="search" onChange={handleChange} value={inputValue} placeholder="what do you want to listen?" />
                 <FontAwesomeIcon icon={faMagnifyingGlass} />
             </div>
 
             <div className="search-result">
-                {searchResult?.slice(0, 30).map((data, index) => (
-                    <SongCart
-                        key={index}
-                        heading={data.track.name}
-                        description={data.track.artists[0].name.length > 35 ? data.track.artists[0].name.substring(0, 35) + "..." : data.track.artists[0].name}
-                        // imagesrc={data.track.album.images[0].url}
-                        imagesrc={data.track.album.images[0]?.url || <img src="default image" />}  // Add a default image URL or handle accordingly
-                        id={data.track.id}
-                        isCurrentlyPlaying={currentlyPlaying === data.track.id}
-                        onTogglePlay={handleCurrentlyPlaying}
-                    />
-                ))}
+                {searchResult?.length > 0 ? (
+                    searchResult.slice(0, 30).map((data, index) => (
+                        <SongCart
+                            key={index}
+                            heading={data?.track?.name?.substring(0, 20) + "..." || 'Unknown Name'}
+                            description={data?.track?.artists?.[0]?.name?.substring(0, 35) + "..." || 'Unknown Artist'}
+                            imagesrc={data?.track?.album?.images?.[0]?.url || "https://example.com/default-image.jpg"}
+                            id={data?.track?.id || 'Unknown ID'}
+                            uriToPlay={data?.track?.uri}
+                        />
+                    ))
+                ) : (
+                    <div className="no-results">No results found</div>
+                )}
             </div>
+
+
 
         </div>
 

@@ -1,85 +1,14 @@
-/* .musicplayer {
-    width: 100vw;
-    height: 4rem;
-    background-color: rgb(223, 226, 226);
-    position: absolute;
-    bottom: 0px;
-    right: 1rem;
-    overflow: hidden;
-} */
-
 .musicplayer {
     width: 100%;
-    height: 10%;
-    /* background-color: rgb(111, 112, 112); */
-    background-color: rgb(16, 16, 43);
+    height: 11%;
     position: absolute;
     bottom: 0px;
     overflow: hidden;
     display: flex;
     justify-content: space-between;
+    background-color: blue;
 }
 
-.music-player-one {
-    height: 100%;
-    width: 25%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10%;
-
-}
-
-.music-player-two {
-    height: 100%;
-    width: 25%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 5%;
-
-}
-
-.music-player-three {
-    height: 100%;
-    width: 25%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5%;
-}
-
-.song-div-one {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.icon-div-one {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-
-.icon-div-two {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 25%;
-}
-
-.song-length {
-    height: 3px;
-    width: 100%;
-    background-color: red;
-}
-
-.volume-div {
-    height: 3px;
-    width: 30%;
-    background-color: red;
-
+.musicplayer .specific-class-of-spotifywebplayer {
+    background-color: blue;
 }

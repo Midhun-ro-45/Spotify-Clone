@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
 import "./contentbox.css";
-import { getIdOfSongs, getSongsByHeadingId } from "../../api/getSongs";
 import { useNavigate } from "react-router-dom";
 import ContentBoxSongs from "../contentBoxSongs/ContentBoxSongs";
+import { useUserContext } from "../../context/UserContext";
 
 function ContentBox({ description, maincontent }) {
     const [contentBoxdetails, setContentBoxdetails] = useState(null);
     const [contentBoxId, setContentBoxId] = useState(null)
     const navigator = useNavigate()
+
+    const { getIdOfSongs, getSongsByHeadingId } = useUserContext()
 
     useEffect(() => {
         if (maincontent) {
@@ -16,7 +18,6 @@ function ContentBox({ description, maincontent }) {
                     setContentBoxId(songId)
                     getSongsByHeadingId(songId).then(songs => {
                         setContentBoxdetails(songs);
-                        console.log(songs)
                     });
                 }
             });
@@ -32,30 +33,18 @@ function ContentBox({ description, maincontent }) {
         }
     }
 
-    // let imageUrl = contentBoxdetails.items[0].track.album.images[0].url
 
     const handleClick = () => {
-        console.log('hiiiiiiiiiiii');
-        // console.log("contentbox details:", contentBoxId);
-
-        // if (typeof ContentBoxSongs.consumeDataInSongs === 'function') {
-        //     ContentBoxSongs.consumeDataInSongs(contentBoxId);
-        // } else {
-        //     console.error('consumeDataInSongs is not a function in ContentBoxSongs');
-        // }
-
         navigator("contentboxSongs", { state: { contentBoxId: contentBoxId } });
-
     }
 
     return (
         <div className='content-box' onClick={handleClick}>
             <div className='image'>
-                {/* Conditional rendering of the image */}
+
                 {imageUrl ? (
                     <img src={imageUrl} alt="Content" />
                 ) : (
-                    // <img src="default-image-url-here" alt="Default Image" />
                     <></>
                 )}
             </div>

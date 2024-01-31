@@ -1,21 +1,17 @@
-import SongCart from "../SongCart/SongCart"
 import "./row.css"
+import SongCart from "../SongCart/SongCart"
 import { useEffect, useState } from "react"
-import { getIdOfSongs, getSongsByHeadingId } from "../../api/getSongs"
+import { useUserContext } from "../../context/UserContext"
 
 function Row({ title }) {
 
-    const [currentlyPlaying, setCurrentlyPlaying] = useState(null)
-
-    const handleCurrentlyPlaying = (id) => {
-        setCurrentlyPlaying(currentlyPlaying === id ? null : id)
-    }
 
     const [endIndex, setEndIndex] = useState(4)
     const [showAll, setShowAll] = useState("show all")
 
     const [songs, setSongs] = useState(null);
-    // const { token } = useUserContext();
+
+    const { getIdOfSongs, getSongsByHeadingId, getUserFavoriteSongs } = useUserContext()
 
     useEffect(() => {
 
@@ -26,7 +22,10 @@ function Row({ title }) {
         });
     }, [title])
 
-
+    const [favData, setFavData] = useState()
+    useEffect(() => {
+        getUserFavoriteSongs().then(data => setFavData(data))
+    }, [])
 
     return (
         <div className='row'>
@@ -41,12 +40,12 @@ function Row({ title }) {
                 {songs?.slice(0, endIndex).map((data, index) => (
                     <SongCart
                         key={index}
-                        heading={data.track.name}
+                        heading={data.track.name.length > 23 ? data.track.name.substring(0, 23) + "..." : data.track.name}
                         description={data.track.artists[0].name.length > 35 ? data.track.artists[0].name.substring(0, 35) + "..." : data.track.artists[0].name}
                         imagesrc={data.track.album.images[0].url}
                         id={data.track.id}
-                        isCurrentlyPlaying={currentlyPlaying === data.track.id}
-                        onTogglePlay={handleCurrentlyPlaying}
+                        uriToPlay={data?.track?.uri}
+                        favData={favData}
                     />
                 ))}
             </div>

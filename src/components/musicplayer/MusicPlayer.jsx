@@ -1,25 +1,39 @@
 import "./musicplayer.css";
 import SpotifyWebPlayer from "react-spotify-web-playback";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useUserContext } from "../../context/UserContext";
 
 function MusicPlayer() {
 
-    const [token, settoken] = useState("BQBcgMDkVfI9hEqVfbG3NZEiDXb2SFcWU8MeF5a-w5FwRvhB8aoa0YxPeQtt3DuXMUgIs2cmjDcFzE0KnjldgiTmc4N3b6QwdyXXLBKHsZPqkfx83-PJWKQpHVBWSPzRN1PmKJX1NtKV7CYcWMB0nfpypwtaSiZGZ3mI-JLGy4Ym8nPqTmgY7dI8Tf-4omJioX0L7PpKJ--Z&token_type=Bearer&expires_in=3600")
+    const { AccessToken } = useUserContext()
+
+    const { Uripath, Isplaying } = useUserContext()
+    Uripath && console.log(Uripath);
+
+    const { currentlyPlaying } = useUserContext()
 
 
+    const handlePlaybackStateChange = (state) => {
+        Isplaying(state.isPlaying);
+
+    };
 
 
-    if (!token) return null
+    if (!AccessToken) return null
     return (
         <div className="musicplayer">
 
-            <SpotifyWebPlayer token={"BQDf2rf6vfquc3zdzMDYBMd7nZeKCJS0_FOsMPHjd8G0EP9DghTXwQXLkjwBG2lAE3_FE2z8g-mx1DI2sCHqQzz8VPVMbF2gPgjSuzZEDs7sEOgpip89NODD82sG2sPj6FvtvPWYl17aXWJLDS6MM7OWHPHTzneqSLhc2udkSZJ4_86JAy3OyaGGt5W_bPHVZGpdU3FM7PptCvjttJ8pPI7VR5Uyhu62u8bLDU1y5MFBBJ21C5iyMKVko92y4tZso1FKx5N1BWE964U&token_type=Bearer&expires_in=3600"}
+            <SpotifyWebPlayer
+                token={AccessToken}
                 showSaveIcon
-            // uris={
-            //     "spotify:track:7j7fS14vlwVk0Pfnr0hovC"}
+                uris={Uripath && [Uripath]}
+                play={currentlyPlaying ? true : false}
+                callback={handlePlaybackStateChange}
+                styles={{ bgColor: "black" }}
             />
         </div>
     );
 }
+
 
 export default MusicPlayer;

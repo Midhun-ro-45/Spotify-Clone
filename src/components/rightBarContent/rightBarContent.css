@@ -1,7 +1,6 @@
 .rightBarContent-container {
     width: 100%;
     height: 11rem;
-    /* border: 1px solid black; */
     background-color: rgb(24, 23, 23);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;

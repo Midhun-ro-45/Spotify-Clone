@@ -1,5 +1,4 @@
 .content-box {
-    /* border: 1px solid black; */
     display: flex;
     border-radius: 0.5rem;
     height: 3.3rem;
@@ -9,7 +8,6 @@
 .image {
     height: 100%;
     width: 20%;
-    /* border: 1px solid black; */
     border-top-left-radius: inherit;
     border-bottom-left-radius: inherit;
     background-size: cover;

@@ -1,5 +1,5 @@
 import "./signUp.css";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import Button from "../../components/button/Button";
 import Input from "../../components/input/Input";
 import { Link } from "react-router-dom";
@@ -7,10 +7,6 @@ import SpotifyIcon from "../../components/spotify icon/SpotifyIcon";
 import { useUserContext } from "../../context/UserContext";
 
 function SignUp() {
-  // const [email, setEmail] = useState("");
-  // const handleChange = (event) => {
-  //   setEmail(event.target.value);
-  // };
 
   const initialState = {
     username: '',
@@ -72,12 +68,7 @@ function SignUp() {
           backgroundColor={"black"}
           fontSize={"15px"}
         />
-        {/* <Button
-          content={"continue with Facebook"}
-          color={"white"}
-          backgroundColor={"black"}
-          fontSize={"15px"}
-        /> */}
+
         <div className="sep-signup-two"></div>
         <div className="login-link">
           Already have an account?<Link to={"/loginform"}>Log in here.</Link>

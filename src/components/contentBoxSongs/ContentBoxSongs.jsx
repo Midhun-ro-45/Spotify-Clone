@@ -1,43 +1,40 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import "./contentboxsongs.css"
-import { getSongsByHeadingId } from "../../api/getSongs";
 import SongCart from "../SongCart/SongCart";
+import { useUserContext } from "../../context/UserContext";
 
 function ContentBoxSongs() {
 
     const location = useLocation();
-    const contenBoxId = location.state.contentBoxId;
-
-    const [playlistId, setPlaylistId] = useState()
+    const contenBoxId = location.state.contentBoxId
 
     const [playlist, setPlaylist] = useState()
 
-    const [currentlyPlaying, setCurrentlyPlaying] = useState(null)
+    const { getSongsByHeadingId, getUserFavoriteSongs } = useUserContext()
 
-    const handleCurrentlyPlaying = (id) => {
-        setCurrentlyPlaying(currentlyPlaying === id ? null : id)
-    }
-
-
-
+    console.log(contenBoxId);
     useEffect(() => {
 
         getSongsByHeadingId(contenBoxId).then((songs) => setPlaylist(songs.items))
     }, [contenBoxId])
 
+    const [favData, setFavData] = useState()
+    useEffect(() => {
+        getUserFavoriteSongs().then(data => setFavData(data))
+    }, [])
 
     return (
         <div className="container">
             {playlist?.slice(0, 28).map((data, index) => (
                 <SongCart
                     key={index}
-                    heading={data.track.name}
+                    heading={data.track.name.length > 20 ? data.track.name.substring(0, 20) + "..." : data.track.name}
                     description={data.track.artists[0].name.length > 35 ? data.track.artists[0].name.substring(0, 35) + "..." : data.track.artists[0].name}
                     imagesrc={data.track.album.images[0].url}
                     id={data.track.id}
-                    isCurrentlyPlaying={currentlyPlaying === data.track.id}
-                    onTogglePlay={handleCurrentlyPlaying}
+                    uriToPlay={data.track.uri}
+                    favData={favData}
                 />
             ))}
 
