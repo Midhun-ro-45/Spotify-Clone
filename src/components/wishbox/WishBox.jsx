@@ -21,7 +21,7 @@ function WishBox() {
       </div>
       <div className='favouritiesContent'>
 
-        <h4>favourites</h4>
+        <h4>Favourites</h4>
 
 
       </div>

@@ -46,6 +46,10 @@
     display: none;
 }
 
+.fav-index-no:hover {
+    cursor: pointer;
+}
+
 .fav-song-cart:hover .fav-index-no {
     display: block;
 }
@@ -68,6 +72,10 @@
     width: 10%;
     display: flex;
     justify-content: center;
+}
+
+.fav-heart:hover {
+    cursor: pointer;
 }
 
 .fav-index {

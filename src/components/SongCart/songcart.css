@@ -26,6 +26,7 @@
     display: block;
     transform: translateY(-10px);
     transition: transform 1s ease-out;
+    cursor: pointer;
 }
 
 .cart:hover {
@@ -71,4 +72,8 @@
     left: 0.5rem;
     font-size: 1.3rem;
     color: white;
+}
+
+.heart-icon:hover {
+    cursor: pointer;
 }

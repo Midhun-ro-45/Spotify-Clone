@@ -8,8 +8,10 @@ function RightBarArea() {
         <div>
             <RightBarContent />
             <Row title={"Tamil Trending"} />
-            <Row title={"2024 kuthu songs"} />
+            <Row title={"2024 Kuthu songs"} />
             <Row title={"2024 Romantic"} />
+            <Row title={"Kollywood corner"} />
+            <Row title={"India's Best"} />
         </div>
     )
 }

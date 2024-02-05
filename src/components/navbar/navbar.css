@@ -23,6 +23,10 @@
     color: white;
 }
 
+.arrows div:hover {
+    cursor: pointer;
+}
+
 .arrows .svg-inline--fa {
     margin-left: 1rem;
 }
@@ -36,6 +40,10 @@
     border: 1px solid white;
     text-align: center;
     margin-right: 2rem;
+}
+
+.user:hover {
+    cursor: pointer;
 }
 
 .user-details {

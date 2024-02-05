@@ -34,9 +34,13 @@
 
 .content h4 {
     color: white;
-    font-weight: 800;
+    font-weight: 400;
 }
 
 .content-box:hover .content {
     background-color: rgba(131, 131, 131, 0.9);
+}
+
+.content-box:hover {
+    cursor: pointer;
 }

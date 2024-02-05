@@ -5,7 +5,7 @@ import SpotifyIcon from "../../components/spotify icon/SpotifyIcon";
 import { Link } from "react-router-dom";
 import "./login.css";
 import { useUserContext } from '../../context/UserContext'
-import { loginUrl } from "../../spotify";
+
 
 function Login() {
 
@@ -26,7 +26,6 @@ function Login() {
   };
 
   const handleLogin = () => {
-    console.log(loginUrl)
     const userExists = loginAuth(inputValue)
     if (userExists) {
       navigateToSpotifyAuthorization()
@@ -37,7 +36,7 @@ function Login() {
 
   }
   const navigateToSpotifyAuthorization = () => {
-    window.location.href = `https://accounts.spotify.com/authorize?client_id=${process.env.REACT_APP_CLIENTID}&redirect_uri=http://localhost:3000/parentpage&scope=streaming%20user-read-email%20user-read-private%20user-library-read%20user-library-modify%20playlist-modify-public%20playlist-modify-private%20user-read-currently-playing%20user-read-recently-played%20user-read-playback-state%20user-top-read%20user-modify-playback-state&response_type=token&show_dialog=true`;
+    window.location.href = `https://accounts.spotify.com/authorize?client_id=${process.env.REACT_APP_CLIENTID}&redirect_uri=http://localhost:3000/homepage&scope=streaming%20user-read-email%20user-read-private%20user-library-read%20user-library-modify%20playlist-modify-public%20playlist-modify-private%20user-read-currently-playing%20user-read-recently-played%20user-read-playback-state%20user-top-read%20user-modify-playback-state&response_type=token&show_dialog=true`;
   }
   return (
     <div className="main-container-login">

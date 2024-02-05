@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ArtistSongList from "../components/artistSongList/ArtistSongList";
 import Search from "../components/search/Search";
-import ParentPage from "../pages/parentpage/ParentPage";
+import HomePage from "../pages/homepage/HomePage";
 import Login from "../auth/login/Login";
 import LandingPage from "../pages/landingpage/Landingpage";
 import SignUp from "../auth/signup/SignUp";
@@ -19,7 +19,7 @@ function AppRouter() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/loginform" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/parentpage" element={<ParentPage />} >
+        <Route path="/homepage" element={<HomePage />} >
 
           <Route index element={<RightBarArea />} />
           <Route path="search" element={<Search />} />

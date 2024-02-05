@@ -18,7 +18,7 @@ function SongCart({ heading, description, imagesrc, id, uriToPlay, favData }) {
   return (
     <div className='cart'>
       <div className="image-container">
-        <img src={imagesrc} />
+        {imagesrc ? <img src={imagesrc} /> : <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSt5HwsaeGatj563CgNZDgJuKf36FuJc-wpA&usqp=CAU" />}
 
         {isInclude ? <div className="heart-icon">
           {heartIcon ?

@@ -3,10 +3,10 @@ import HomeContainer from "../../components/homecontainer/HomeContainer";
 import Navbar from "../../components/navbar/Navbar";
 import MusicPlayer from "../../components/musicplayer/MusicPlayer";
 import SongHeadingContainer from "../../components/songHeadingContainer/SongHeadingContainer";
-import "./parentpage.css";
+import "./homepage.css";
 
 
-const ParentPage = () => {
+const HomePage = () => {
 
   return (
     <div className="parentpage-container">
@@ -26,4 +26,4 @@ const ParentPage = () => {
   );
 };
 
-export default ParentPage;
+export default HomePage;

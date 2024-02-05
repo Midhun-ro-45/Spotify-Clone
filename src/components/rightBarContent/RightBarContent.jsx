@@ -7,7 +7,7 @@ function RightBarContent() {
     <WishBox />
     <ArtistContent artistcontent={"Anirudh Ravichandher"} />
     <ArtistContent artistcontent={"Yuvan Shankar Raja"} />
-    <ArtistContent artistcontent={"G.V Prakash Kumar"} />
+    <ArtistContent artistcontent={"G.V.Prakash Kumar"} />
     <ArtistContent artistcontent={"A.R.Rahman"} />
     <ArtistContent artistcontent={"Harris Jayaraj"} />
   </div>;
