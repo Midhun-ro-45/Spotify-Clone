@@ -5,13 +5,14 @@ import { useUserContext } from "../../context/UserContext";
 
 function MusicPlayer() {
 
-    const { AccessToken } = useUserContext()
+    // const { AccessToken } = useUserContext()
 
     const { Uripath, Isplaying } = useUserContext()
     Uripath && console.log(Uripath);
 
     const { currentlyPlaying } = useUserContext()
 
+    const AccessToken = sessionStorage.getItem("access_token")
 
     const handlePlaybackStateChange = (state) => {
         Isplaying(state.isPlaying);

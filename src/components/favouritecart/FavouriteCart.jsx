@@ -21,10 +21,10 @@ function FavouriteCart({ imagesrc, heading, albumName, data, duration, artistNam
 
 
     const handleClickAlbum = () => {
-        navigator("/parentpage/favouritesContent", { state: { album: albumName } });
+        navigator("/homepage/favouritesContent", { state: { album: albumName } });
     }
     const handleClickArtist = () => {
-        navigator("/parentpage/favouritesContent", { state: { artist: artistName } });
+        navigator("/homepage/favouritesContent", { state: { artist: artistName } });
     }
 
 
